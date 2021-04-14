@@ -2,9 +2,9 @@
     "dev": {
         "app_function": "main.app",
         "aws_region": "ap-northeast-2",
-        "profile_name": "kamiltest",
-        "project_name": "test-pro",
+        "profile_name": "kamillee",
+        "project_name": "final-project",
         "runtime": "python3.8",
-        "s3_bucket": "kamiltest-zappa-static"
+        "s3_bucket": "kamillee-zappa-static"
     }
 }

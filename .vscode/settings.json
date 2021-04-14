@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\parou\\anaconda3\\python.exe"
+    "python.pythonPath": "py38\\Scripts\\python.exe",
+    "git.ignoreLimitWarning": true
 }
