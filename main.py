@@ -6,8 +6,8 @@ app = Flask(__name__, static_url_path='')
 
 @app.route('/', methods=['GET'])
 def index():
-     return 'hello zappa!'
-     
+     return 'hello Zappa!'
+
 if __name__ == '__main__':
  if len(sys.argv) > 1:
      app.debug = True
