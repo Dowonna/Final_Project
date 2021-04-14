@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\PlayData\test_pro\py38"
+VIRTUAL_ENV="D:\PlayData\Final_Project\py38"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
