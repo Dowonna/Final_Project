@@ -51,7 +51,7 @@ $ python -m venv py38  # 대부분의 프로젝트에서 사용하는 이름인 
 가상환경을 굳이 Git 등의 소스 버전 관리 시스템에 업로드할 필요는 없으므로 "py38" 디렉토리를 **_.gitignore_** 파일에 추가해 줍니다.
 
 ```
-$ echo 'py38' >> .gitignore
+$ echo py38 >> .gitignore
 ```
 
 ### 가상환경 활성화
