@@ -9,6 +9,7 @@ CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
+        # return render_template('index.html')
         return 'Welcome to Nutplease Movie Recommendation System :)'
 
 @app.route('/movies', methods=['GET'])
@@ -18,4 +19,4 @@ def recommendate_movies():
 
 if __name__ == '__main__':
         port = int(os.environ.get("PORT", 5000))
-        app.run(host="0.0.0.0", port=port, debug=True)
+        app.run(host="127.0.0.1", port=port, debug=True)
