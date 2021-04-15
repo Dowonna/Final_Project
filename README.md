@@ -1,4 +1,4 @@
-# 🎓2021 Playdata Final Project | **Nutplease**(Netflix Clone + Movie Recommendation System)
+# 🎓2021 Playdata Final Project | Nutplease(Netflix Clone + Content-Based Movie Recommendation System)
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PaaS](https://img.shields.io/badge/PaaS-Heroku-blueviolet)
@@ -30,7 +30,7 @@
 
 Python Flask 애플리케이션은 Heroku에 직접 배포하는 것이 가능합니다. 하지만 배포를 더 많이 제어하거나 Heroku에만 의존하고 싶지 않을 경우에는 Docker를 사용하여 Python 애플리케이션을 컨테이너화 한 후, 만들어진 컨테이너를 Heroku에 배포할 수 있습니다. 이렇게 Docker를 사용하면 애플리케이션을 모든 클라우드 제공 업체(AWS, GCP 등)에서도 사용할 수 있다는 장점이 있습니다.
 
-서론이 다소 길어졌는데, 설치 방법을 간단하게 다음과 같이 정리할 수 있습니다(Windows 사용자 기준).
+서론이 다소 길었는데, 설치 방법을 간단하게 다음과 같이 정리할 수 있습니다(Windows 사용자 기준).
 
 * **[Heroku 가입](https://www.heroku.com)**
 * **[Hekoku 전용 CLI 설치](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)**
@@ -62,7 +62,7 @@ $ echo py38 >> .gitignore
 $ py38\Scripts\activate
 ```
 
-가상환경이 활성화된 것을 확인하려면 명령 프롬프트  앞에 `(py38)`라고 붙으면 가상환경이 활성화된 것입니다.
+가상환경이 활성화된 것을 확인하려면 명령 프롬프트  앞에 `(py38)`이라고 붙으면 가상환경이 활성화된 것입니다.
 
 ### Flask 패키지 설치
 
@@ -129,7 +129,7 @@ CMD ["main.py"]
 
 Docker 이미지를 빌드하기 위해 다음의 명령어를 명령 프롬프트에 입력합니다.
 
-`docker build` 혹은 `docker run`에 관한 옵션을 알고 싶다면 **[Develop with Docker Engine API](https://docs.docker.com/engine/api/)**에 접속하시면 됩니다.
+`docker build` 혹은 `docker run`에 관한 옵션을 알고 싶다면 **[Develop with Docker Engine API](https://docs.docker.com/engine/api/)** 에 접속하시면 됩니다.
 
 ```
 $ docker build -t flask-heroku:latest .  # 'flask-heroku' 부분은 다른 이름으로 대체해도 OK
@@ -186,12 +186,43 @@ $ heroku run
 
 ### 시연 예시
 
-1. 
+1. **[!!!미완성!!!]** Docker 컨테이너가 실행 중일 때 <u>https://nutplease.herokuapp.com</u> 사이트에 접속하는 모습
 
+![nutplease_example1](https://user-images.githubusercontent.com/17983434/114926150-f8091980-9e6a-11eb-9072-5bcc9937b0ae.gif)
 
-* 팁
-* 영감
-* 기타사항
+2. **[!!!미완성!!!]** 검색창에 영화 '인셉션(Inception)'를 검색한 후 유사한 영화를 예측하는 모습
+
+![nutplease_example2](https://user-images.githubusercontent.com/17983434/114926887-d65c6200-9e6b-11eb-91c4-dc1af63d40e4.gif)
+
+### 느낀 점
+
+1. 최종프로젝트 시작에 앞서
+
+데이터 분석이건 코딩이건 매번 느끼는 것이 있습니다. 팀 단위의 프로젝트를 진행할 때마다 본인이 못해서(자신이 없어서) 다른 팀원에게 민폐가 될까 하는 부분입니다. 만약 팀 단위의 프로젝트가 아니라면 본인의 페이스에 맞춰 진행하면 되는데 데드라인도 4주라는 결코 적지 않은 시간안에 해결해야 하기 때문입니다.
+
+2. 아쉬웠던 부분
+
+사실 저희 팀은 데이터 분석을 중심으로 꾸려진 팀원인 관계로 백엔드 개발을 하지 않았다는 점입니다. 데이터 수집이 중요한 시대에 데이터를 수집하기 위한 수단이 존재하지 않는다는 것입니다. 그럼에도 불구하고 완성도 높은 프로젝트 결과물을 만들어내지 못한 것 또한 사실입니다. PM인 저로써 매우 부끄러운 일입니다. 다른 팀원들간 소통을 보다 적극적으로 실천하지 않아서 발생한 문제라고 생각됩니다.
+
+언젠가 저에게 프로젝트가 주어질지는 모르겠지만, 지난 프로젝트들을 돌이켜 보면서 좋은 모습 및 결과를 얻을 수 있도록 재도전하고 싶습니다.
+
+### 개선 사항?
+
+이번 프로젝트를 진행하면서 서비스 배포환경으로 AWS와 GCP(Google Cloud Platform) 그리고 Heroku 중 많은 고민을 했었습니다. 아직 이러한 배포 과정을 경험해 본적이 없던터라 적합성 판단 기준으로 다음과 같이 조건을 부여한 후 판단하게 되었습니다.
+
+```
+- 성능
+- 비용(무로 사용 가능 여부 중요)
+- 편의성(관리, 배포 측면에서)
+```
+
+Heroku와 AWS 그리고 GCP 모두 무료로(제한적이지만) 사용 가능하기 때문에 `비용` 부분은 크게 고려되지 않았으며, `성능`의 경우 역시 크게 고려하지 않았는데 아직 제대로 된 빅데이터를 다뤄보지 못했기 때문이기도 하지만 이번 프로젝트만으로는 성능을 체감할 만한 부분이 적었기 때문입니다.
+
+가장 많이 고려한 부분이 `편의성`인데 아직 인프라 환경을 구축하기 위한 준비도 많이 부족했기 때문에 AWS와 GCP는 Heroku에 비해 상대적으로 낮게 평가했었습니다. 따라서 Heroku를 사용하게 되었지만 기회가 되면 다른 인프라 환경 또한 구축하는 방법을 터득해 나갈 예정입니다.
+
+### 진짜 마지막으로...
+
+아직 최종 프로젝트가 종료된 것은 아니지만(작성 일자 기준으로 4일 남음), 정신 없는 시간동안 수고해 주신 팀원 분들, 그리고 플레이데이터 관게자 여러분 모두에게 진심으로 감사의 인사를 전합니다.
 
 ## 👥Built With / 프로젝트에 참여한 팀원들
 * [이민재](https://github.com/Dowonna) - PM 
