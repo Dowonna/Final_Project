@@ -1,18 +1,19 @@
-import sys
+from flask_cors import CORS
+from flask import Flask, request, jsonify
 
-from flask import Flask, redirect, request, jsonify, url_for, render_template
+import netflix_model
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
-     return 'Hello Zappa!'
+        return 'Welcome to Nutplease Movie Recommendation System :)'
+
+@app.route('/movies', methods=['GET'])
+def recommendate_movies():
+        res = netflix_model.movies_result(request.args.get('title'))
+        return jsonify(res)
 
 if __name__ == '__main__':
- if len(sys.argv) > 1:
-     app.debug = True
-     app.jinja_env.auto_reload = True
-     app.config['TEMPLATES_AUTO_RELOAD'] = True
-     app.run(host='0.0.0.0', port=4000)
- else:
-     app.run(host='0.0.0.0')
+        app.run(port=4000, debug=True)

@@ -34,7 +34,7 @@ def main():
         data = json.loads(data)
     try:
         sys.stdout.write(json.dumps(
-            jmespath.search(expression, data), indent=4, ensure_ascii=False))
+            jmespath.search(expression, data), indent=4))
         sys.stdout.write('\n')
     except exceptions.ArityError as e:
         sys.stderr.write("invalid-arity: %s\n" % e)
