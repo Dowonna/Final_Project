@@ -5,6 +5,10 @@
         "profile_name": "kamillee",
         "project_name": "final-project",
         "runtime": "python3.8",
-        "s3_bucket": "kamillee-zappa-static"
+        "s3_bucket": "kamillee-zappa-static",
+        "log_level": "WARNING",
+        "memory_size": 128,
+        "timeout_seconds": 60,
+        "slim_handler": true
     }
 }
