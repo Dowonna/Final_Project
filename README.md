@@ -186,11 +186,11 @@ $ heroku run
 
 ### 시연 예시
 
-1. **[!!!미완성!!!]** Docker 컨테이너가 실행 중일 때 <u>https://nutplease.herokuapp.com</u> 사이트에 접속하는 모습
+1.  Docker 컨테이너가 실행 중일 때 <u>https://nutplease.herokuapp.com</u> 사이트에 접속하는 모습
 
 ![nutplease_example1](https://user-images.githubusercontent.com/17983434/114926150-f8091980-9e6a-11eb-9072-5bcc9937b0ae.gif)
 
-2. **[!!!미완성!!!]** 검색창에 영화 '인셉션(Inception)'를 검색한 후 유사한 영화를 예측하는 모습
+2. 검색창에 영화 '인셉션(Inception)'를 검색한 후 유사한 영화를 예측하는 모습
 
 ![nutplease_example2](https://user-images.githubusercontent.com/17983434/114926887-d65c6200-9e6b-11eb-91c4-dc1af63d40e4.gif)
 
